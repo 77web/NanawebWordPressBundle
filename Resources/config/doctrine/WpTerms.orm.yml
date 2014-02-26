@@ -1,0 +1,44 @@
+Nanaweb\WordPressBundle\Entity\WpTerms:
+    type: entity
+    table: wp_terms
+    indexes:
+        name:
+            columns:
+                - name
+    uniqueConstraints:
+        slug:
+            columns:
+                - slug
+    id:
+        termId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: term_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        name:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+            default: ''
+        slug:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+            default: ''
+        termGroup:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: term_group
+    lifecycleCallbacks: {  }

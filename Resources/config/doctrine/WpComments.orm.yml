@@ -1,0 +1,131 @@
+Nanaweb\WordPressBundle\Entity\WpComments:
+    type: entity
+    table: wp_comments
+    indexes:
+        comment_post_ID:
+            columns:
+                - comment_post_ID
+        comment_approved_date_gmt:
+            columns:
+                - comment_approved
+                - comment_date_gmt
+        comment_date_gmt:
+            columns:
+                - comment_date_gmt
+        comment_parent:
+            columns:
+                - comment_parent
+    id:
+        commentId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: comment_ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        commentPostId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: comment_post_ID
+        commentAuthor:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: comment_author
+        commentAuthorEmail:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: ''
+            column: comment_author_email
+        commentAuthorUrl:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+            default: ''
+            column: comment_author_url
+        commentAuthorIp:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: ''
+            column: comment_author_IP
+        commentDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: comment_date
+        commentDateGmt:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: comment_date_gmt
+        commentContent:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: comment_content
+        commentKarma:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: comment_karma
+        commentApproved:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: '1'
+            column: comment_approved
+        commentAgent:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: comment_agent
+        commentType:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: ''
+            column: comment_type
+        commentParent:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: comment_parent
+        userId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: user_id
+    lifecycleCallbacks: {  }

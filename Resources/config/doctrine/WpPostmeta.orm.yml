@@ -1,0 +1,43 @@
+Nanaweb\WordPressBundle\Entity\WpPostmeta:
+    type: entity
+    table: wp_postmeta
+    indexes:
+        post_id:
+            columns:
+                - post_id
+        meta_key:
+            columns:
+                - meta_key
+    id:
+        metaId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: meta_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        postId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: post_id
+        metaKey:
+            type: string
+            nullable: true
+            length: 255
+            fixed: false
+            comment: ''
+            column: meta_key
+        metaValue:
+            type: text
+            nullable: true
+            length: null
+            fixed: false
+            comment: ''
+            column: meta_value
+    lifecycleCallbacks: {  }

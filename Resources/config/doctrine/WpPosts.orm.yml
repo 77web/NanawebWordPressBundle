@@ -1,0 +1,187 @@
+Nanaweb\WordPressBundle\Entity\WpPosts:
+    type: entity
+    table: wp_posts
+    indexes:
+        post_name:
+            columns:
+                - post_name
+        type_status_date:
+            columns:
+                - post_type
+                - post_status
+                - post_date
+                - ID
+        post_parent:
+            columns:
+                - post_parent
+        post_author:
+            columns:
+                - post_author
+    id:
+        id:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: ID
+            generator:
+                strategy: IDENTITY
+    fields:
+        postAuthor:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: post_author
+        postDate:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: post_date
+        postDateGmt:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: post_date_gmt
+        postContent:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: post_content
+        postTitle:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: post_title
+        postExcerpt:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: post_excerpt
+        postStatus:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: publish
+            column: post_status
+        commentStatus:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: open
+            column: comment_status
+        pingStatus:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: open
+            column: ping_status
+        postPassword:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: ''
+            column: post_password
+        postName:
+            type: string
+            nullable: false
+            length: 200
+            fixed: false
+            comment: ''
+            default: ''
+            column: post_name
+        toPing:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: to_ping
+        pinged:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        postModified:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: post_modified
+        postModifiedGmt:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: post_modified_gmt
+        postContentFiltered:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: post_content_filtered
+        postParent:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: post_parent
+        guid:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+        menuOrder:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: menu_order
+        postType:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: post
+            column: post_type
+        postMimeType:
+            type: string
+            nullable: false
+            length: 100
+            fixed: false
+            comment: ''
+            default: ''
+            column: post_mime_type
+        commentCount:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: comment_count
+    lifecycleCallbacks: {  }

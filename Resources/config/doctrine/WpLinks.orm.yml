@@ -1,0 +1,110 @@
+Nanaweb\WordPressBundle\Entity\WpLinks:
+    type: entity
+    table: wp_links
+    indexes:
+        link_visible:
+            columns:
+                - link_visible
+    id:
+        linkId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: link_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        linkUrl:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_url
+        linkName:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_name
+        linkImage:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_image
+        linkTarget:
+            type: string
+            nullable: false
+            length: 25
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_target
+        linkDescription:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_description
+        linkVisible:
+            type: string
+            nullable: false
+            length: 20
+            fixed: false
+            comment: ''
+            default: Y
+            column: link_visible
+        linkOwner:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '1'
+            column: link_owner
+        linkRating:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: link_rating
+        linkUpdated:
+            type: datetime
+            nullable: false
+            comment: ''
+            default: '0000-00-00 00:00:00'
+            column: link_updated
+        linkRel:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_rel
+        linkNotes:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+            column: link_notes
+        linkRss:
+            type: string
+            nullable: false
+            length: 255
+            fixed: false
+            comment: ''
+            default: ''
+            column: link_rss
+    lifecycleCallbacks: {  }

@@ -1,0 +1,56 @@
+Nanaweb\WordPressBundle\Entity\WpTermTaxonomy:
+    type: entity
+    table: wp_term_taxonomy
+    indexes:
+        taxonomy:
+            columns:
+                - taxonomy
+    uniqueConstraints:
+        term_id_taxonomy:
+            columns:
+                - term_id
+                - taxonomy
+    id:
+        termTaxonomyId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            id: true
+            column: term_taxonomy_id
+            generator:
+                strategy: IDENTITY
+    fields:
+        termId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            column: term_id
+        taxonomy:
+            type: string
+            nullable: false
+            length: 32
+            fixed: false
+            comment: ''
+            default: ''
+        description:
+            type: text
+            nullable: false
+            length: null
+            fixed: false
+            comment: ''
+        parent:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+        count:
+            type: bigint
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+    lifecycleCallbacks: {  }

@@ -1,0 +1,33 @@
+Nanaweb\WordPressBundle\Entity\WpTermRelationships:
+    type: entity
+    table: wp_term_relationships
+    indexes:
+        term_taxonomy_id:
+            columns:
+                - term_taxonomy_id
+    id:
+        objectId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            id: true
+            column: object_id
+        termTaxonomyId:
+            type: bigint
+            nullable: false
+            unsigned: true
+            comment: ''
+            default: '0'
+            id: true
+            column: term_taxonomy_id
+    fields:
+        termOrder:
+            type: integer
+            nullable: false
+            unsigned: false
+            comment: ''
+            default: '0'
+            column: term_order
+    lifecycleCallbacks: {  }

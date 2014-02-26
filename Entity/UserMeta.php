@@ -15,7 +15,7 @@ class UserMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="umeta_id", type="bigint")
+     * @ORM\Column(name="umeta_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class UserMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_id", type="bigint", nullable=false)
+     * @ORM\Column(name="user_id", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $userId;
 

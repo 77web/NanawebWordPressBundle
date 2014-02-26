@@ -15,7 +15,7 @@ class Comment
     /**
      * @var integer
      *
-     * @ORM\Column(name="comment_ID", type="bigint")
+     * @ORM\Column(name="comment_ID", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class Comment
     /**
      * @var integer
      *
-     * @ORM\Column(name="comment_post_ID", type="bigint", nullable=false)
+     * @ORM\Column(name="comment_post_ID", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $postId;
 
@@ -108,14 +108,14 @@ class Comment
     /**
      * @var integer
      *
-     * @ORM\Column(name="comment_parent", type="bigint", nullable=false)
+     * @ORM\Column(name="comment_parent", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $parentId;
 
     /**
      * @var integer
      *
-     * @ORM\Column(name="user_id", type="bigint", nullable=false)
+     * @ORM\Column(name="user_id", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $userId;
 

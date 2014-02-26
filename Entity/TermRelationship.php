@@ -15,7 +15,7 @@ class TermRelationship
     /**
      * @var integer
      *
-     * @ORM\Column(name="object_id", type="bigint")
+     * @ORM\Column(name="object_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */
@@ -24,7 +24,7 @@ class TermRelationship
     /**
      * @var integer
      *
-     * @ORM\Column(name="term_taxonomy_id", type="bigint")
+     * @ORM\Column(name="term_taxonomy_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
      */

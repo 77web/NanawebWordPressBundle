@@ -15,7 +15,7 @@ class Post
     /**
      * @var integer
      *
-     * @ORM\Column(name="ID", type="bigint")
+     * @ORM\Column(name="ID", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class Post
     /**
      * @var integer
      *
-     * @ORM\Column(name="post_author", type="bigint", nullable=false)
+     * @ORM\Column(name="post_author", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $userId;
 
@@ -136,7 +136,7 @@ class Post
     /**
      * @var integer
      *
-     * @ORM\Column(name="post_parent", type="bigint", nullable=false)
+     * @ORM\Column(name="post_parent", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $parentId;
 

@@ -15,7 +15,7 @@ class Term
     /**
      * @var integer
      *
-     * @ORM\Column(name="term_id", type="bigint")
+     * @ORM\Column(name="term_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

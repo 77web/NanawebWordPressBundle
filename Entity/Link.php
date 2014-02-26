@@ -15,7 +15,7 @@ class Link
     /**
      * @var integer
      *
-     * @ORM\Column(name="link_id", type="bigint")
+     * @ORM\Column(name="link_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -66,7 +66,7 @@ class Link
     /**
      * @var integer
      *
-     * @ORM\Column(name="link_owner", type="bigint", nullable=false)
+     * @ORM\Column(name="link_owner", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $owner;
 

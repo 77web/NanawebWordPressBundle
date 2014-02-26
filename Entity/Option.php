@@ -15,7 +15,7 @@ class Option
     /**
      * @var integer
      *
-     * @ORM\Column(name="option_id", type="bigint")
+     * @ORM\Column(name="option_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */

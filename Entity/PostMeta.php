@@ -15,7 +15,7 @@ class PostMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="meta_id", type="bigint")
+     * @ORM\Column(name="meta_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class PostMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="post_id", type="bigint", nullable=false)
+     * @ORM\Column(name="post_id", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $postId;
 

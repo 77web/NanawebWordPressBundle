@@ -15,7 +15,7 @@ class TermTaxonomy
     /**
      * @var integer
      *
-     * @ORM\Column(name="term_taxonomy_id", type="bigint")
+     * @ORM\Column(name="term_taxonomy_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class TermTaxonomy
     /**
      * @var integer
      *
-     * @ORM\Column(name="term_id", type="bigint", nullable=false)
+     * @ORM\Column(name="term_id", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $termId;
 
@@ -45,7 +45,7 @@ class TermTaxonomy
     /**
      * @var integer
      *
-     * @ORM\Column(name="parent", type="bigint", nullable=false)
+     * @ORM\Column(name="parent", type="bigint", options={"unsigned":true}, nullable=false)
      */
     private $parentTermTaxonomyId;
 

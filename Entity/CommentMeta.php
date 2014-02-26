@@ -15,7 +15,7 @@ class CommentMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="meta_id", type="bigint")
+     * @ORM\Column(name="meta_id", type="bigint", options={"unsigned":true})
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="IDENTITY")
      */
@@ -24,7 +24,7 @@ class CommentMeta
     /**
      * @var integer
      *
-     * @ORM\Column(name="comment_id", type="bigint", nullable=false)
+     * @ORM\Column(name="comment_id", type="bigint", nullable=false, options={"unsigned":true})
      */
     private $commentId;
 

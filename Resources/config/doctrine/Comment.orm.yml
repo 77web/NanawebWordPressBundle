@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpComments:
+Nanaweb\WordPressBundle\Entity\Comment:
     type: entity
     table: wp_comments
     indexes:
@@ -16,7 +16,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             columns:
                 - comment_parent
     id:
-        commentId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
@@ -26,21 +26,21 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             generator:
                 strategy: IDENTITY
     fields:
-        commentPostId:
+        postId:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             default: '0'
             column: comment_post_ID
-        commentAuthor:
+        author:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: comment_author
-        commentAuthorEmail:
+        authorEmail:
             type: string
             nullable: false
             length: 100
@@ -48,7 +48,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: ''
             column: comment_author_email
-        commentAuthorUrl:
+        authorUrl:
             type: string
             nullable: false
             length: 200
@@ -56,7 +56,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: ''
             column: comment_author_url
-        commentAuthorIp:
+        authorIp:
             type: string
             nullable: false
             length: 100
@@ -64,33 +64,33 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: ''
             column: comment_author_IP
-        commentDate:
+        created:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: comment_date
-        commentDateGmt:
+        createdGmt:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: comment_date_gmt
-        commentContent:
+        content:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: comment_content
-        commentKarma:
+        karma:
             type: integer
             nullable: false
             unsigned: false
             comment: ''
             default: '0'
             column: comment_karma
-        commentApproved:
+        approved:
             type: string
             nullable: false
             length: 20
@@ -98,7 +98,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: '1'
             column: comment_approved
-        commentAgent:
+        agent:
             type: string
             nullable: false
             length: 255
@@ -106,7 +106,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: ''
             column: comment_agent
-        commentType:
+        type:
             type: string
             nullable: false
             length: 20
@@ -114,7 +114,7 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             comment: ''
             default: ''
             column: comment_type
-        commentParent:
+        parentId:
             type: bigint
             nullable: false
             unsigned: true
@@ -129,3 +129,19 @@ Nanaweb\WordPressBundle\Entity\WpComments:
             default: '0'
             column: user_id
     lifecycleCallbacks: {  }
+    manyToOne:
+        parent:
+            targetEntity: Comment
+            joinColumn:
+                name: comment_parent
+                referencedColumnName: comment_ID
+        post:
+            targetEntity: Post
+            joinColumn:
+                name: comment_post_ID
+                referencedColumnName: ID
+        user:
+            targetEntity: User
+            joinColumn:
+                name: user_id
+                referencedColumnName: id

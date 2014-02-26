@@ -1,39 +1,39 @@
-Nanaweb\WordPressBundle\Entity\WpUsermeta:
+Nanaweb\WordPressBundle\Entity\CommentMeta:
     type: entity
-    table: wp_usermeta
+    table: wp_commentmeta
     indexes:
-        user_id:
+        comment_id:
             columns:
-                - user_id
+                - comment_id
         meta_key:
             columns:
                 - meta_key
     id:
-        umetaId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             id: true
-            column: umeta_id
+            column: meta_id
             generator:
                 strategy: IDENTITY
     fields:
-        userId:
+        commentId:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             default: '0'
-            column: user_id
-        metaKey:
+            column: comment_id
+        key:
             type: string
             nullable: true
             length: 255
             fixed: false
             comment: ''
             column: meta_key
-        metaValue:
+        value:
             type: text
             nullable: true
             length: null
@@ -41,3 +41,10 @@ Nanaweb\WordPressBundle\Entity\WpUsermeta:
             comment: ''
             column: meta_value
     lifecycleCallbacks: {  }
+    manyToOne:
+        comment:
+            targetEntity: Comment
+            joinColumn:
+                name: comment_id
+                referencedColumnName: comment_ID
+

@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpTermRelationships:
+Nanaweb\WordPressBundle\Entity\TermRelationship:
     type: entity
     table: wp_term_relationships
     indexes:
@@ -23,7 +23,7 @@ Nanaweb\WordPressBundle\Entity\WpTermRelationships:
             id: true
             column: term_taxonomy_id
     fields:
-        termOrder:
+        order:
             type: integer
             nullable: false
             unsigned: false

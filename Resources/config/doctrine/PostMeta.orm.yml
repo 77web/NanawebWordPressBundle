@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpPostmeta:
+Nanaweb\WordPressBundle\Entity\PostMeta:
     type: entity
     table: wp_postmeta
     indexes:
@@ -9,7 +9,7 @@ Nanaweb\WordPressBundle\Entity\WpPostmeta:
             columns:
                 - meta_key
     id:
-        metaId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
@@ -26,14 +26,14 @@ Nanaweb\WordPressBundle\Entity\WpPostmeta:
             comment: ''
             default: '0'
             column: post_id
-        metaKey:
+        key:
             type: string
             nullable: true
             length: 255
             fixed: false
             comment: ''
             column: meta_key
-        metaValue:
+        value:
             type: text
             nullable: true
             length: null
@@ -41,3 +41,9 @@ Nanaweb\WordPressBundle\Entity\WpPostmeta:
             comment: ''
             column: meta_value
     lifecycleCallbacks: {  }
+    manyToOne:
+        post:
+            targetEntity: Post
+            joinColumn:
+                name: post_id
+                referencedColumnName: ID

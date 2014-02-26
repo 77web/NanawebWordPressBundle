@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpOptions:
+Nanaweb\WordPressBundle\Entity\Option:
     type: entity
     table: wp_options
     uniqueConstraints:
@@ -6,7 +6,7 @@ Nanaweb\WordPressBundle\Entity\WpOptions:
             columns:
                 - option_name
     id:
-        optionId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
@@ -16,7 +16,7 @@ Nanaweb\WordPressBundle\Entity\WpOptions:
             generator:
                 strategy: IDENTITY
     fields:
-        optionName:
+        name:
             type: string
             nullable: false
             length: 64
@@ -24,7 +24,7 @@ Nanaweb\WordPressBundle\Entity\WpOptions:
             comment: ''
             default: ''
             column: option_name
-        optionValue:
+        value:
             type: text
             nullable: false
             length: null

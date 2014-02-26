@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpTermTaxonomy:
+Nanaweb\WordPressBundle\Entity\TermTaxonomy:
     type: entity
     table: wp_term_taxonomy
     indexes:
@@ -11,7 +11,7 @@ Nanaweb\WordPressBundle\Entity\WpTermTaxonomy:
                 - term_id
                 - taxonomy
     id:
-        termTaxonomyId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
@@ -41,12 +41,13 @@ Nanaweb\WordPressBundle\Entity\WpTermTaxonomy:
             length: null
             fixed: false
             comment: ''
-        parent:
+        parentTermTaxonomyId:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             default: '0'
+            column: parent
         count:
             type: bigint
             nullable: false
@@ -54,3 +55,14 @@ Nanaweb\WordPressBundle\Entity\WpTermTaxonomy:
             comment: ''
             default: '0'
     lifecycleCallbacks: {  }
+    manyToOne:
+        term:
+            targetEntity: Term
+            joinColumn:
+                name: term_id
+                referencedColumnName: term_id
+        parent:
+            targetEntity: TermTaxonomy
+            joinColumn:
+                name: parent
+                referencedColumnName: term_taxonomy_id

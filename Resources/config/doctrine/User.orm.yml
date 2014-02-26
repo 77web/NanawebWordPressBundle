@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpUsers:
+Nanaweb\WordPressBundle\Entity\User:
     type: entity
     table: wp_users
     indexes:
@@ -19,7 +19,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             generator:
                 strategy: IDENTITY
     fields:
-        userLogin:
+        username:
             type: string
             nullable: false
             length: 60
@@ -27,7 +27,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_login
-        userPass:
+        password:
             type: string
             nullable: false
             length: 64
@@ -35,7 +35,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_pass
-        userNicename:
+        nicename:
             type: string
             nullable: false
             length: 50
@@ -43,7 +43,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_nicename
-        userEmail:
+        email:
             type: string
             nullable: false
             length: 100
@@ -51,7 +51,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_email
-        userUrl:
+        url:
             type: string
             nullable: false
             length: 100
@@ -59,13 +59,13 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_url
-        userRegistered:
+        registered:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: user_registered
-        userActivationKey:
+        activationKey:
             type: string
             nullable: false
             length: 60
@@ -73,7 +73,7 @@ Nanaweb\WordPressBundle\Entity\WpUsers:
             comment: ''
             default: ''
             column: user_activation_key
-        userStatus:
+        status:
             type: integer
             nullable: false
             unsigned: false

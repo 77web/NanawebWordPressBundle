@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpPosts:
+Nanaweb\WordPressBundle\Entity\Post:
     type: entity
     table: wp_posts
     indexes:
@@ -28,47 +28,47 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             generator:
                 strategy: IDENTITY
     fields:
-        postAuthor:
+        userId:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             default: '0'
             column: post_author
-        postDate:
+        published:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: post_date
-        postDateGmt:
+        publishedGmt:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: post_date_gmt
-        postContent:
+        content:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: post_content
-        postTitle:
+        title:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: post_title
-        postExcerpt:
+        excerpt:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: post_excerpt
-        postStatus:
+        status:
             type: string
             nullable: false
             length: 20
@@ -92,7 +92,7 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             comment: ''
             default: open
             column: ping_status
-        postPassword:
+        password:
             type: string
             nullable: false
             length: 20
@@ -100,7 +100,7 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             comment: ''
             default: ''
             column: post_password
-        postName:
+        slug:
             type: string
             nullable: false
             length: 200
@@ -121,26 +121,26 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             length: null
             fixed: false
             comment: ''
-        postModified:
+        modified:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: post_modified
-        postModifiedGmt:
+        modifiedGmt:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: post_modified_gmt
-        postContentFiltered:
+        contentFiltered:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: post_content_filtered
-        postParent:
+        parentId:
             type: bigint
             nullable: false
             unsigned: true
@@ -161,7 +161,7 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             comment: ''
             default: '0'
             column: menu_order
-        postType:
+        type:
             type: string
             nullable: false
             length: 20
@@ -169,7 +169,7 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             comment: ''
             default: post
             column: post_type
-        postMimeType:
+        mimeType:
             type: string
             nullable: false
             length: 100
@@ -185,3 +185,24 @@ Nanaweb\WordPressBundle\Entity\WpPosts:
             default: '0'
             column: comment_count
     lifecycleCallbacks: {  }
+    manyToOne:
+        author:
+            targetEntity: User
+            joinColumn:
+                name: post_author
+                referencedColumnName: id
+        parentPost:
+            targetEntity: Post
+            joinColumn:
+                name: post_parent
+                referencedColumnName: ID
+    oneToMany:
+        metas:
+            targetEntity: PostMeta
+            mappedBy: post
+        comments:
+            targetEntity: Comment
+            mappedBy: post
+        childrenPosts:
+            targetEntity: Post
+            mappedBy: parentPost

@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpTerms:
+Nanaweb\WordPressBundle\Entity\Term:
     type: entity
     table: wp_terms
     indexes:
@@ -10,7 +10,7 @@ Nanaweb\WordPressBundle\Entity\WpTerms:
             columns:
                 - slug
     id:
-        termId:
+        id:
             type: bigint
             nullable: false
             unsigned: true

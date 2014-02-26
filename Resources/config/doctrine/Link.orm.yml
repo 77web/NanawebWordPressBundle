@@ -1,4 +1,4 @@
-Nanaweb\WordPressBundle\Entity\WpLinks:
+Nanaweb\WordPressBundle\Entity\Link:
     type: entity
     table: wp_links
     indexes:
@@ -6,7 +6,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             columns:
                 - link_visible
     id:
-        linkId:
+        id:
             type: bigint
             nullable: false
             unsigned: true
@@ -16,7 +16,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             generator:
                 strategy: IDENTITY
     fields:
-        linkUrl:
+        url:
             type: string
             nullable: false
             length: 255
@@ -24,7 +24,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_url
-        linkName:
+        name:
             type: string
             nullable: false
             length: 255
@@ -32,7 +32,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_name
-        linkImage:
+        image:
             type: string
             nullable: false
             length: 255
@@ -40,7 +40,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_image
-        linkTarget:
+        target:
             type: string
             nullable: false
             length: 25
@@ -48,7 +48,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_target
-        linkDescription:
+        description:
             type: string
             nullable: false
             length: 255
@@ -56,7 +56,7 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_description
-        linkVisible:
+        visible:
             type: string
             nullable: false
             length: 20
@@ -64,27 +64,27 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: Y
             column: link_visible
-        linkOwner:
+        owner:
             type: bigint
             nullable: false
             unsigned: true
             comment: ''
             default: '1'
             column: link_owner
-        linkRating:
+        rating:
             type: integer
             nullable: false
             unsigned: false
             comment: ''
             default: '0'
             column: link_rating
-        linkUpdated:
+        updated:
             type: datetime
             nullable: false
             comment: ''
             default: '0000-00-00 00:00:00'
             column: link_updated
-        linkRel:
+        rel:
             type: string
             nullable: false
             length: 255
@@ -92,14 +92,14 @@ Nanaweb\WordPressBundle\Entity\WpLinks:
             comment: ''
             default: ''
             column: link_rel
-        linkNotes:
+        note:
             type: text
             nullable: false
             length: null
             fixed: false
             comment: ''
             column: link_notes
-        linkRss:
+        rss:
             type: string
             nullable: false
             length: 255
